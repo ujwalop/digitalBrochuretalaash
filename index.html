@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Viewer with Swipe Animation</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 255, 255));
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    #image-viewer {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      background-color: #f1f1f1;
+      align-items: center;
+      flex-shrink: 0;
+      margin: 0;
+    }
+
+    .footer a {
+      flex: 1;
+      text-decoration: none;
+    }
+
+    .footer button {
+      width: 100%;
+      padding: 10px 15px;
+      font-size: 14px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: 200% 200%;
+      background-position: center;
+    }
+
+    .footer button img {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+
+    .footer button:focus {
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
+
+    .footer button.prev {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+    }
+
+    .footer button.prev:hover {
+      background-position: right center;
+    }
+
+    .footer button.next {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+
+    .footer button.next:hover {
+      background-position: right center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (min-width: 600px) {
+      .footer button {
+        padding: 15px 20px;
+        font-size: 16px;
+      }
+
+      .footer button img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="image-viewer" class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Images will be rendered here -->
+        <div class="swiper-slide"><img src="page1.jpg" alt="Page 1"></div>
+        <div class="swiper-slide"><img src="page2.jpg" alt="Page 2"></div>
+        <div class="swiper-slide"><img src="page3.jpg" alt="Page 3"></div>
+        
+      </div>
+    </div>
+    <div class="footer">
+      <a href="https://talaashevent.netlify.app/">
+        <button class="prev">
+          <img src="op1.png" alt="Previous Logo">click here to register
+        </button>
+      </a>
+      <a href="https://www.next-website.com">
+        <button class="next">
+          <img src="op2.png" alt="Next Logo">click here to download pdf
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      direction: 'horizontal',
+      loop: false,
+    });
+
+    // Remove previous and next page navigation for swiper as buttons now redirect to other websites
+  </script>
+</body>
+</html>
